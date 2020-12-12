@@ -6,7 +6,7 @@ def get_games(page,count,search):
     try:
         page=int(page)
         count=int(count)
-        lower_limit=(page-1)*10
+        lower_limit=(page-1)*count
 
         conn=sqlite3.connect('PS4_Game_Database.db')
         c=conn.cursor()
