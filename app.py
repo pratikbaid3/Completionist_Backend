@@ -2,7 +2,11 @@ from flask import Flask,request
 from flask_restful import Resource, Api
 import ps4_games
 
-app=Flask(__name__)
+#BASE URL= https://completionist-api.herokuapp.com/
+
+app=Flask(__name__, static_url_path='/public', static_folder='public/')
+app.config['PROPAGATE_EXCEPTIONS']=True
+app.secret_key='Pratik'
 api=Api(app)
 
 class PS4Games(Resource):
@@ -14,10 +18,10 @@ class PS4Games(Resource):
             game_list=ps4_games.get_games(page,count,search)
             if(game_list=='Error'):
                 raise
-            return {'result':{'games':game_list,'page':page,'count':count}}
+            return {'result':{'games':game_list,'page':page,'count':count}},200
         except Exception as e:
             print('ERROR')
-            return {'result':'Server Error'}
+            return {'result':'Server Error'},500
 
 class PS4Game(Resource):
     def get(self,name):
@@ -25,10 +29,10 @@ class PS4Game(Resource):
             game_list=ps4_games.get_game(name)
             if(game_list=='Error'):
                 raise
-            return {'result':{'games':game_list}}
+            return {'result':{'games':game_list}},200
         except Exception as e:
             print('ERROR',e)
-            return {'result':'Server Error'}
+            return {'result':'Server Error'},500
 
 class PS4GameGuide(Resource):
     def get(self,name):
@@ -36,12 +40,12 @@ class PS4GameGuide(Resource):
             game_list=ps4_games.get_game_guide(name)
             if(game_list=='Error'):
                 raise
-            return {'result':{'games':game_list}}
+            return {'result':{'games':game_list}},200
         except Exception as e:
             print('ERROR',e)
-            return {'result':'Server Error'}
+            return {'result':'Server Error'},500
 
-api.add_resource(PS4Games,'/ps4/games/')
+api.add_resource(PS4Games,'/ps4/games')
 api.add_resource(PS4Game,'/ps4/game/<string:name>')
 api.add_resource(PS4GameGuide,'/ps4/game/guide/<string:name>')
 
