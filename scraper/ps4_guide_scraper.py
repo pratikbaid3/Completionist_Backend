@@ -52,7 +52,7 @@ try:
             print(e)
             print("ERROR: " + game_name)
 
-    for i in range(246, 2186):
+    for i in range(1499, 2186):
         my_url = game_guide_url[i]
         name = game_name[i]
 
