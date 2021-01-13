@@ -19,6 +19,10 @@ def get_games(page, count, search):
             game = {
                 "game_name": data[0],
                 "game_image_url": data[1],
+                "gold": data[3],
+                "silver": data[4],
+                "bronze": data[5],
+                "platinum": data[6],
             }
             game_list.append(game)
         conn.commit()
@@ -42,6 +46,10 @@ def get_game(name):
             game = {
                 "game_name": data[0],
                 "game_image_url": data[1],
+                "gold": data[2],
+                "silver": data[3],
+                "bronze": data[4],
+                "platinum": data[6],
             }
             game_list.append(game)
         conn.commit()
