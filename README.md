@@ -1,10 +1,27 @@
-# PSN-Trophy-Data-Scraper
-Python script that scrapes game and trophy detail from the site https://www.playstationtrophies.org/games/ps4/. It then creates two SQLITE database that contains the scraped details.
+# Completionist Backend
+## Usage
 
-Database with game name and the guide link and the image link:
+1. Clone the repository from GitHub:
 
-<img src="SS1.png" width=800>
+```bash
+https://github.com/pratikbaid3/Completionist_Backend
+```
 
-Database with game name, trophy name, trophy image, trophy type, trophy description and trophy guide:
+2. Create virtual environment:
 
-<img src="SS2.png" width=800>
+```bash
+virtualenv venv --python=python3
+source venv/binactivate
+```
+
+3. Installing requirements:
+
+```bash
+pip install -r requirements.txt
+```
+
+5. Run the app:
+
+```bash
+python app.py
+```
