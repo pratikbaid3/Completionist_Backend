@@ -11,8 +11,9 @@ https://github.com/pratikbaid3/Completionist_Backend
 
 ```bash
 virtualenv venv --python=python3
-source venv/binactivate
+source venv/bin/activate
 ```
+
 
 3. Installing requirements:
 
