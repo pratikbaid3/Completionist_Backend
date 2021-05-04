@@ -1,10 +1,10 @@
 from django.contrib import admin
 from . import models
 
-
+#
 # Register your models here.
 
-@admin.register(models.PS4Game)
+@admin.register(models.Ps4Games)
 class PS4GameAdmin(admin.ModelAdmin):
     list_display = [
         'game_name',
@@ -15,7 +15,7 @@ class PS4GameAdmin(admin.ModelAdmin):
     ]
 
 
-@admin.register(models.PS4GamesGuide)
+@admin.register(models.Ps4GamesGuide)
 class PS4GameAdmin(admin.ModelAdmin):
     list_display = [
         'game_name',
