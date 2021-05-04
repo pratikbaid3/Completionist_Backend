@@ -8,10 +8,10 @@ from . import models
 class PS4GameAdmin(admin.ModelAdmin):
     list_display = [
         'game_name',
-        'GOLD',
-        'SILVER',
-        'BRONZE',
-        'PLATINUM'
+        'gold',
+        'silver',
+        'bronze',
+        'platinum'
     ]
 
 

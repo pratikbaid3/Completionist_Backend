@@ -11,10 +11,10 @@ class PS4Game(models.Model):
     game_name = models.CharField(max_length=500)
     game_image_link = models.CharField(max_length=500)
     game_guide_url = models.CharField(max_length=500)
-    GOLD = models.IntegerField()
-    SILVER = models.IntegerField()
-    BRONZE = models.IntegerField()
-    PLATINUM = models.IntegerField()
+    gold = models.IntegerField()
+    silver = models.IntegerField()
+    bronze = models.IntegerField()
+    platinum = models.IntegerField()
 
     def __str__(self):
         return self.game_name
