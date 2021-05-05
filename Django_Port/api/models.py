@@ -25,7 +25,7 @@ class Ps4GamesGuide(models.Model):
         verbose_name = 'PS4 Game Guide'
         verbose_name_plural = 'PS4 Game Guides'
         db_table = 'PS4_Games_Guide'
-        ordering =['game_name']
+        ordering = ['game_name']
 
     game_name = models.TextField(blank=True, null=True)
     trophy_name = models.TextField(primary_key=True)
@@ -36,4 +36,4 @@ class Ps4GamesGuide(models.Model):
     youtube_link = models.TextField(blank=True, null=True)
 
     def __str__(self):
-        return self.game_name
+        return self.trophy_name
