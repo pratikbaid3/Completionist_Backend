@@ -1,2 +1,7 @@
-/venv
-/code/__pycache__
+
+# Elastic Beanstalk Files
+venv
+core/config.py
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml

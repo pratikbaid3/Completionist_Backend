@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-from core.config import host_url, secret_key
+from core.config import secret_key
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -27,7 +27,7 @@ SECRET_KEY = secret_key
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [host_url]
+ALLOWED_HOSTS = []
 
 
 # Application definition
