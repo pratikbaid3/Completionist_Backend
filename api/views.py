@@ -7,9 +7,6 @@ from api.serializers import Ps4GameSerializer, Ps4GamesGuideSerializer
 from rest_framework import filters
 
 
-# Create your views here.
-
-
 class Ps4GamesView(generics.ListAPIView):  # Returns paginated list of games
     serializer_class = Ps4GameSerializer
     queryset = Ps4Games.objects.all()
@@ -24,7 +21,7 @@ class Ps4GameView(APIView):  # Returns single game
         return Response({'results': serializer.data})
 
 
-class Ps4GamesGuideView(APIView):
+class Ps4GamesGuideView(APIView):  # Return game by game name
     def get(self, request, format=None, **kwargs):
         guide = Ps4GamesGuide.objects.filter(game_name=kwargs['game_name'])
         serializer = Ps4GamesGuideSerializer(guide, many=True)
